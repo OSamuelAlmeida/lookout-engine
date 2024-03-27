@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_library(CORE_FOUNDATION CoreFoundation)
 find_library(CORE_GRAPHICS CoreGraphics)
+find_library(CORE_TEXT CoreText)
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 add_library(LookoutWebRenderer SHARED
@@ -12,4 +13,4 @@ add_library(LookoutWebRenderer SHARED
     src/Renderer.cpp
 )
 
-target_link_libraries(LookoutWebRenderer ${CORE_FOUNDATION} ${CORE_GRAPHICS})
+target_link_libraries(LookoutWebRenderer ${CORE_FOUNDATION} ${CORE_GRAPHICS} ${CORE_TEXT})
